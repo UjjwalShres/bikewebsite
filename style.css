@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;500;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+/* navbar styles */
+
+.nav-container {
+    display: flex;
+    background-color: #fa823f;
+    position: fixed;
+    width: 100%;
+}
+
+.link {
+    display: flex;
+    margin: 15px 0 15px 20rem;
+}
+
+.link>div>a {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.link>div {
+    padding: 0 20px;
+}
+
+.img {
+    background: url(./assets/bikewebsitelogo.png);
+    background-size: 150px;
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 200px;
+    margin: 10px;
+}
+
+/* navbar styles ends*/
+
+/* home page styles starts*/
+.home-container {
+    background: url(./assets/home-page-bg.png);
+    height: 100vh;
+    background-size: cover;
+}
+
+.home-container>h1 {
+    margin: 0;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 6rem;
+    width: 70%;
+    margin: auto;
+    padding: 170px;
+}
+
+.bike-display-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 40px;
+    padding: 100px;
+    background-color: black;
+}
+
+.bike-card {
+    padding: 10px;
+    background-color: #fa823f;
+    border-radius: 18px;
+    /* box-shadow: rgba(255, 255, 255, 0.623) 0px 7px 29px 0px; */
+}
+
+.bike-card>img {
+    width: 100%;
+    border-radius: 18px;
+}
+
+.bike-card>.p-company {
+    margin-left: 5px;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+.bike-card>.p-cc {
+    margin-left: 5px;
+}
+
+.bike-card>h3 {
+    margin-left: 5px;
+}
+
+/* about page starts */
+
+.about-container {
+    background: url(./assets/about-page-bg.png);
+    height: 100vh;
+    background-size: cover;
+}
+
+.about-container>h1 {
+    margin: 0;
+    color: white;
+    text-transform: uppercase;
+    font-size: 4rem;
+    width: 70%;
+    padding: 200px 170px 0;
+}
+
+.about-container>p {
+    color: white;
+    font-size: 1.5rem;
+    width: 50%;
+    padding: 0 170px;
+}
+
+.about-container>button {
+    background-color: #fa823f;
+    padding: 18px;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    margin: 100px 170px 0;
+    cursor: pointer;
+}
+
+.about-container>button:hover {
+    background-color: black;
+}
+
+.about-section2 {
+    background-color: #fa823f;
+    height: 100vh;
+}
+
+.about-section2>h1 {
+    color: white;
+    margin: 0 auto;
+    padding: 80px;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.about-card-container {
+    display: grid;
+    grid-gap: 60px;
+    padding: 60px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.about-card {
+    text-align: center;
+    color: white;
+}
+
+.about-card>h3 {
+    font-size: 2rem;
+}
+
+/* contact page starts */
+
+.contact-container {
+    background: url(./assets/contact-page-bg.png);
+    height: 100vh;
+    background-size: cover;
+}
+
+.contact-container>h1 {
+    margin: 0;
+    color: white;
+    text-transform: uppercase;
+    font-size: 2rem;
+    width: 70%;
+    text-align: center;
+    padding: 100px 0 0 0;
+}
+
+.contact-container>form {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.contact-container>form>input {
+    padding: 15px;
+    margin: 10px;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    border: none;
+}
+
+form>input>.inline-input {
+    width: 20%;
+}
+
+form>textarea {
+    width: 83%;
+    margin: 10px;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    border: none;
+    padding: 15px;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+input[type=address] {
+    width: 83%;
+    background-color: rgb(255, 235, 199);
+    background-color: rgb(250, 217, 157);
+    background-color: rgb(255, 205, 113);
+    background-color: rgb(254, 186, 59);
+
+}
+
+.contact-container>form>button {
+    background-color: #fa823f;
+    padding: 10px 40px;
+    font-size: 1.5rem;
+    border-radius: 12px;
+    border: none;
+    margin-left: 17rem;
+    display: block;
+    cursor: pointer;
+}
+
+.contact-container>form>button:hover {
+    background-color: black;
+    color: white;
+}
+
+.contact-alert {
+    color: rgba(162, 0, 0, 0.8);
+    background-color: rgb(255, 128, 128);
+    text-align: center;
+    padding: 5px 20px;
+    margin: 0 20px;
+    width: 80%;
+}
+
+.contact-success {
+    color: rgba(46, 162, 0, 0.8);
+    background-color: rgb(153, 255, 128);
+    text-align: center;
+    padding: 5px 20px;
+    margin: 0 20px;
+    width: 80%;
+}
+
+/* footer starts here */
+
+.footer-container {
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-container>h2 {
+    color: #fa823f;
+    font-size: 2rem;
+}
+
+/* Login starts from here*/
+
+.login-container {
+    background: url('./assets/login-page-bg.png');
+    height: 100vh;
+    background-size: cover;
+}
+
+.login-container>form {
+    padding: 300px 100px 100px 0;
+    width: 30%;
+    margin-left: auto;
+}
+
+.login-container>form>input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px;
+    font-size: 1.5rem;
+    border-radius: 6px;
+    border: none;
+    background-color: #fa823f;
+}
+
+.login-container>form>input::placeholder {
+    color: white;
+}
+
+.login-container>form>button {
+    width: 95%;
+    padding: 10px;
+    margin: 10px;
+    background-color: black;
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 6px;
+    border: none;
+}
+
+.error-message {
+    color: red;
+    margin-left: 20px;
+}
+
+/* dashboard starts from here*/
+
+.flex {
+    display: flex;
+}
+
+.bike-details-section {
+    background: url(./assets/add-bike-details-bg.png);
+    width: 55%;
+    background-size: cover;
+    height: 100vh;
+}
+
+.bike-details-form {
+    padding: 100px 10px;
+}
+
+.bike-details-form>h3 {
+    font-size: 2rem;
+    color: white;
+}
+
+.bike-details-form>select {
+    padding: 10px;
+    border: none;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    margin-left: 5px;
+    font-size: 1.5rem;
+}
+
+.bike-details-form>input {
+    padding: 10px;
+    border: none;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    margin: 0 10px;
+    font-size: 1.5rem;
+}
+
+.bike-details-form>label {
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* .bike-details-form>.upload {
+    padding: 10px;
+    width: 70%;
+    border: 2px #fa823f dashed;
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+    border-radius: 8px;
+} */
+
+.bike-details-form>input[type="file"] {
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: dashed #fa823f 2px;
+    color: white;
+    padding: 40px;
+    margin-top: 30px;
+    width: 83%;
+}
+
+.bike-details-form>button {
+    padding: 14px;
+    background-color: #fa823f;
+    font-size: 1.5rem;
+    width: 92%;
+    margin: 10px;
+    border: none;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.feedback-header {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    background-color: black;
+    position: sticky;
+    top: 0;
+    padding: 10px;
+}
+
+.feedback-display-container {
+    background-color: black;
+    width: 45%;
+    padding-top: 8.2vh;
+    height: 91.8vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.feedback-card {
+    background-color: white;
+    padding: 30px 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.feedback-card>hr {
+    border: 2px solid #fa823f;
+}
+
+.feedback-card>.feedback-name {
+    font-weight: bolder;
+    font-size: 1.3rem;
+}
+
+.feedback-card>.feedback-email {
+    color: #fa823f;
+}
+
+.feedback-card>.date {
+    font-weight: lighter;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* search form starts from here */
+.search-container {
+    background-color: black;
+}
+
+.search-form {
+    background-color: black;
+    padding: 40px;
+    margin: auto;
+    width: fit-content;
+}
+
+.search-form>select {
+    background-color: #fa823f;
+    color: black;
+    border: none;
+    font-size: 1.5rem;
+    padding: 4px;
+}
+
+.search-form>input {
+    padding: 4px;
+    font-size: 1.5rem;
+}
+
+.search-form>input::placeholder {
+    color: rgb(82, 82, 82);
+    font-weight: 100;
+}
+
+.search-form>button {
+    padding: 4px 12px;
+    font-size: 1.5rem;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+
+}

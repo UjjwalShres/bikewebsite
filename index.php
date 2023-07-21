@@ -13,10 +13,32 @@
     include "navbar.php";
     include "database.php";
 
-    // to show all the bike details in card
-    // $sql = "SELECT * FROM bikedetails";
-    // $result = mysqli_query($conn, $sql);
-    // $details = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    //pagination
+    $sql = "SELECT * FROM bikedetails";
+    $result = mysqli_query($conn, $sql);
+    $rows = mysqli_num_rows($result);
+    $page = $rows / 4;
+    if ($page != round($page)) {
+        $page = round($page) + 1;
+    }
+    if (!isset($_GET['id'])) {
+        $limit = 'LIMIT 4';
+    } else {
+        $page_number = $_GET['id'];
+    }
+
+    if (isset($page_number)) {
+        $page_start = ($page_number - 1) * 4 . ', 4';
+        $limit = 'LIMIT ' . $page_start;
+    } else {
+        $page_number = 1;
+        $page_start = '';
+        $limit = 'LIMIT 4';
+    }
+
+
+
+
 
 
     //search bar logic
@@ -33,7 +55,7 @@
             switch ([$company, $bikename, $cc]) {
                 case ['all', 'all', 'all']:
                     echo 'no input: default search';
-                    $sql = "SELECT * FROM bikedetails";
+                    $sql = "SELECT * FROM bikedetails $limit";
                     $result = mysqli_query($conn, $sql);
                     $details = mysqli_fetch_all($result, MYSQLI_ASSOC);
                     break;
@@ -83,7 +105,7 @@
         }
     } else {
         // if search button is not clicked (at the start of page load)
-        $sql = "SELECT * FROM bikedetails";
+        $sql = "SELECT * FROM bikedetails $limit";
         $result = mysqli_query($conn, $sql);
         $details = mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
@@ -128,13 +150,37 @@
     <div class="bike-display-container">
 
         <?php foreach ($details as $items) : ?>
-            <div class="bike-card">
-                <img src="<?php echo $items['imagepath']; ?>" alt="bike-image">
-                <h3><?php echo $items['bikename']; ?></h3>
-                <p class="p-cc"><?php echo $items['cc'] . ' CC'; ?></p>
-                <p class="p-company"><?php echo $items['company']; ?></p>
-            </div>
+            <a href="singlepage.php?id=<?php echo $items['id']; ?>">
+                <div class="bike-card">
+                    <img src="<?php echo $items['imagepath']; ?>" alt="bike-image">
+                    <h3><?php echo $items['bikename']; ?></h3>
+                    <p class="p-cc"><?php echo $items['cc'] . ' CC'; ?></p>
+                    <p class="p-company"><?php echo $items['company']; ?></p>
+                </div>
+            </a>
+
         <?php endforeach; ?>
+
+
+    </div>
+    <div class="pagination-container">
+        <p style="color: #fa823f; text-align: center; margin-top: 0;">Page <?php echo $page_number; ?></p>
+        <div class="pagebtn-container">
+            <!-- pagination according to number to rows in db LIMIT 4 -->
+
+            <?php for ($i = 1; $i <= $page; $i++) : ?>
+                <form method="POST" class="pagination">
+
+                    <button class="page" name="page" type="submit"><a href="index.php?id=<?php echo $i; ?>"><?php echo $i; ?></a></button>
+                </form>
+            <?php endfor; ?>
+        </div>
+
+
+
+
+        <!-- <button class="page2" name="page2">2</button>
+            <button class="page3" name="page3">3</button> -->
 
     </div>
 

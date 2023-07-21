@@ -66,11 +66,20 @@ body {
     background-color: black;
 }
 
+.bike-display-container>a {
+    text-decoration: none;
+    color: black;
+}
+
 .bike-card {
     padding: 10px;
     background-color: #fa823f;
     border-radius: 18px;
     /* box-shadow: rgba(255, 255, 255, 0.623) 0px 7px 29px 0px; */
+}
+
+.bike-display-container>a>.bike-card:hover {
+    background-color: white;
 }
 
 .bike-card>img {
@@ -90,6 +99,41 @@ body {
 
 .bike-card>h3 {
     margin-left: 5px;
+}
+
+/* Pagination bike page */
+.pagination-container {
+    background-color: black;
+    padding-bottom: 20px;
+}
+
+.pagination {
+    background-color: gray;
+    margin: 4px;
+}
+
+.pagination>button {
+    background-color: white;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.pagination>button>a {
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    padding: 8px 10px;
+}
+
+.pagination>button:hover {
+    background-color: #fa823f;
+}
+
+.pagebtn-container {
+    display: flex;
+    width: fit-content;
+    margin: auto;
 }
 
 /* about page starts */
